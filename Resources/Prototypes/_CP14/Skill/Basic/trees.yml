@@ -29,6 +29,12 @@
   color: "#51cf72"
 
 - type: cp14SkillTree
+  id: Beast
+  name: Animalism
+  desc: Harness the power of Nature!
+  color: "#51cf72"
+
+- type: cp14SkillTree
   id: Athletic
   name: cp14-skill-tree-athletic-name
   desc: cp14-skill-tree-athletic-desc
