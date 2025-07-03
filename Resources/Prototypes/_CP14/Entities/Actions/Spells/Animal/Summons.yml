@@ -1,0 +1,129 @@
+#Summon Base
+- type: entity
+  id: CP14SummonedCreatureBase
+  abstract: true
+  components:
+  - type: TimedDespawn
+    lifetime: 30
+
+#Follower Base
+- type: entity
+  id: CP14FollowerCreatureBase
+  abstract: true
+  components:
+  - type: HTN
+    rootTask:
+      task: CP14ZombieCompound
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      tags:
+      - FootstepSound
+
+#Frienndly Creature Base
+- type: entity
+  id: CP14FriendlyCreatureBase
+  abstract: true
+  components:
+  - type: NpcFactionMember
+    factions:
+    - CP14Adventurers
+
+#Summoned Spider
+- type: entity
+  id: CP14MobSpiderFriendly
+  name: Summoned Spider
+  parent: [ CP14FriendlyCreatureBase, CP14FollowerCreatureBase, CP14MobSpiderBlackHunter ]
+  description: Summoned Spider!
+
+#Summoned Boar
+- type: entity
+  id: CP14MobBoarFriendly
+  name: Summoned Boar
+  parent: [ CP14FriendlyCreatureBase, CP14FollowerCreatureBase, CP14MobBoar ]
+  description: Summoned Boar!
+
+# Summon Spider
+- type: entity
+  id: CP14ActionSpellSummonSpider
+  parent: CP14ActionSpellBase
+  name: Summon Spider
+  description: Summon a Spider.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/agaric.rsi
+    state: base1
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.3
+  - type: CP14MagicEffectManaCost
+    manaCost: 40
+  - type: CP14MagicEffect
+    magicType: Beast
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectSphereOfLight
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14MobSpiderFriendly
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Quaeso fungi evoca ut me protegat... "
+    endSpeech: "Appare!"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFireball
+  - type: CP14MagicEffectPacifiedBlock
+  - type: Action
+    icon:
+      sprite: _CP14/Objects/Flora/Wild/agaric.rsi
+      state: base1
+  - type: TargetAction
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      cooldown: 30
+      castDelay: 2.5
+      breakOnMove: false
+
+# Summon Boar
+- type: entity
+  id: CP14ActionSpellSummonBoar
+  parent: CP14ActionSpellBase
+  name: Summon Boar
+  description: Summon a Boar.
+  components:
+  - type: Sprite
+    sprite: _CP14/Objects/Flora/Wild/agaric.rsi
+    state: base1
+  - type: CP14MagicEffectCastSlowdown
+    speedMultiplier: 0.3
+  - type: CP14MagicEffectManaCost
+    manaCost: 40
+  - type: CP14MagicEffect
+    magicType: Beast
+    effects:
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14ImpactEffectSphereOfLight
+    - !type:CP14SpellSpawnEntityOnUser
+      spawns:
+      - CP14MobBoarFriendly
+  - type: CP14MagicEffectVerbalAspect
+    startSpeech: "Quaeso fungi evoca ut me protegat... "
+    endSpeech: "Appare!"
+  - type: CP14MagicEffectSomaticAspect
+  - type: CP14MagicEffectCastingVisual
+    proto: CP14RuneFireball
+  - type: CP14MagicEffectPacifiedBlock
+  - type: Action
+    icon:
+      sprite: _CP14/Objects/Flora/Wild/agaric.rsi
+      state: base1
+  - type: TargetAction
+    checkCanAccess: false
+    range: 60
+  - type: WorldTargetAction
+    event: !type:CP14DelayedWorldTargetActionEvent
+      cooldown: 30
+      castDelay: 2.5
+      breakOnMove: false
