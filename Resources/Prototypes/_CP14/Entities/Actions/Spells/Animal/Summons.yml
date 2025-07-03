@@ -57,7 +57,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 40
   - type: CP14MagicEffect
-    magicType: Bestia
+    magicType: Beast
     effects:
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
@@ -100,7 +100,7 @@
   - type: CP14MagicEffectManaCost
     manaCost: 40
   - type: CP14MagicEffect
-    magicType: Bestia
+    magicType: Beast
     effects:
     - !type:CP14SpellSpawnEntityOnUser
       spawns:
