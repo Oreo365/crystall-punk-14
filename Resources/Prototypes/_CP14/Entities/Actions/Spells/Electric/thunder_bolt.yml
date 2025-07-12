@@ -19,7 +19,7 @@
       spawns:
       - CP14ThunderBolt
   - type: CP14MagicEffectVerbalAspect
-    startSpeech: "Sagitta glaciei..."
+    startSpeech: "Tonitrua Sagitta..."
     endSpeech: "in manu mea"
   - type: CP14MagicEffectSomaticAspect
   - type: CP14MagicEffectCastingVisual
