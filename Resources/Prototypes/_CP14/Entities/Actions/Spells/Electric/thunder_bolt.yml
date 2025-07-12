@@ -1,5 +1,5 @@
 - type: entity
-  id: CP14ActionSpellLightningBolt
+  id: CP14ActionSpellThunderBolt
   parent: CP14ActionSpellBase
   name: Thunder bolt
   description: You create a temporary electrifying thunder bolt that can be used as a disposable crossbow projectile.
